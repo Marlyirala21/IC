@@ -1,0 +1,70 @@
+TRUE
+CLIPS> (dribble-on salida-prueba-1.txt)
+El juego elegido para la sesión es: oca
+El niño se caracteriza por ser: tramposo
+¡Vamos a jugar!
+El niño tramposo puede realizar:  moverse una casilla de más
+El niño tramposo puede realizar:  tirar dos veces el dado
+Turno del: niño, estaba en la casilla 0 y avanza hasta la casilla 1
+Turno del: robot, estaba en la casilla 0 y avanza hasta la casilla 2
+Turno del: niño, estaba en la casilla 1 y avanza hasta la casilla 3
+Turno del: robot, estaba en la casilla 2 y avanza hasta la casilla 5
+Turno del: niño, estaba en la casilla 3 y avanza hasta la casilla 9
+Turno del: robot, estaba en la casilla 5 y avanza hasta la casilla 10
+Turno del: niño, estaba en la casilla 9 y avanza hasta la casilla 10
+Turno del: robot, estaba en la casilla 10 y avanza hasta la casilla 14
+El niño realiza:  moverse una casilla de más
+El robot le corrige diciendo: Uy que te he pillado, vuelve a tu casilla y no hagas trampas
+El niño tramposo puede realizar:  moverse una casilla de más
+Turno del: robot, estaba en la casilla 14 y avanza hasta la casilla 18
+Turno del: niño, estaba en la casilla 10 y avanza hasta la casilla 15
+Turno del: robot, estaba en la casilla 18 y avanza hasta la casilla 22
+Turno del: niño, estaba en la casilla 15 y avanza hasta la casilla 20
+Turno del: robot, estaba en la casilla 22 y avanza hasta la casilla 26
+El niño realiza:  tirar dos veces el dado
+El robot le corrige diciendo: Oyee, el dado se tiene que tirar una sola vez, la próxima te tocará un número mejor ¡ya verás!
+El niño tramposo puede realizar:  tirar dos veces el dado
+Turno del: robot, estaba en la casilla 26 y avanza hasta la casilla 29
+El niño realiza:  tirar dos veces el dado
+El robot le corrige diciendo: Oyee, el dado se tiene que tirar una sola vez, la próxima te tocará un número mejor ¡ya verás!
+El niño tramposo puede realizar:  tirar dos veces el dado
+Turno del: robot, estaba en la casilla 29 y avanza hasta la casilla 34
+Turno del: niño, estaba en la casilla 20 y avanza hasta la casilla 25
+Turno del: robot, estaba en la casilla 34 y avanza hasta la casilla 35
+Turno del: niño, estaba en la casilla 25 y avanza hasta la casilla 31
+Turno del: robot, estaba en la casilla 35 y avanza hasta la casilla 40
+Turno del: niño, estaba en la casilla 31 y avanza hasta la casilla 35
+¡El robot ha caido en una casilla de tipo puente!
+Turno del robot, estaba en la casilla 40 y avanza hasta la casilla 27
+Turno del: niño, estaba en la casilla 35 y avanza hasta la casilla 39
+Turno del: robot, estaba en la casilla 27 y avanza hasta la casilla 32
+Turno del: niño, estaba en la casilla 39 y avanza hasta la casilla 43
+Turno del: robot, estaba en la casilla 32 y avanza hasta la casilla 38
+Turno del: niño, estaba en la casilla 43 y avanza hasta la casilla 45
+Turno del: robot, estaba en la casilla 38 y avanza hasta la casilla 39
+Turno del: niño, estaba en la casilla 45 y avanza hasta la casilla 46
+Turno del: robot, estaba en la casilla 39 y avanza hasta la casilla 42
+Turno del: niño, estaba en la casilla 46 y avanza hasta la casilla 51
+Turno del: robot, estaba en la casilla 42 y avanza hasta la casilla 43
+El niño realiza:  moverse una casilla de más
+El robot le corrige diciendo: Uy que te he pillado, vuelve a tu casilla y no hagas trampas
+El niño tramposo puede realizar:  moverse una casilla de más
+Turno del: robot, estaba en la casilla 43 y avanza hasta la casilla 48
+El niño realiza:  moverse una casilla de más
+El robot le corrige diciendo: Uy que te he pillado, vuelve a tu casilla y no hagas trampas
+El niño tramposo puede realizar:  moverse una casilla de más
+Turno del: robot, estaba en la casilla 48 y avanza hasta la casilla 54
+Turno del: niño, estaba en la casilla 51 y avanza hasta la casilla 57
+Turno del: robot, estaba en la casilla 54 y avanza hasta la casilla 56
+El niño realiza:  tirar dos veces el dado
+El robot le corrige diciendo: Oyee, el dado se tiene que tirar una sola vez, la próxima te tocará un número mejor ¡ya verás!
+El niño tramposo puede realizar:  tirar dos veces el dado
+Turno del: robot, estaba en la casilla 56 y avanza hasta la casilla 58
+Turno del: niño, estaba en la casilla 57 y avanza hasta la casilla 61
+Turno del: robot, estaba en la casilla 58 y avanza hasta la casilla 63
+El niño realiza:  moverse una casilla de más
+El robot le corrige diciendo: Uy que te he pillado, vuelve a tu casilla y no hagas trampas
+El niño tramposo puede realizar:  moverse una casilla de más
+FIN DEL JUEGO
+El ganador es el robot ¡enhorabuena!
+CLIPS> (run)

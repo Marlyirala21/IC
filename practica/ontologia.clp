@@ -10,7 +10,7 @@
 
 (defclass JUGADOR (is-a USER) 
         (slot nombre (type SYMBOL) (allowed-values niño robot))
-        (slot personalidad (type SYMBOL) (allowed-values torpe tramposo robot))
+        (slot personalidad (type SYMBOL) (allowed-values torpe tramposo robot impaciente))
         (slot posicion (type INTEGER) (default 0))
 		(slot turno (type SYMBOL) (allowed-values si no) (default no))
 		(slot contador(type INTEGER)(default 0)))

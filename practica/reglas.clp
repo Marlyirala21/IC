@@ -12,7 +12,7 @@
 	
 (defrule características
 	(declare (salience 15))
-	(object (is-a HACEMAL) (personalidad ?pers) (accion ?accion) (num-veces ?n) (num-veces-max ?max))
+	(object (is-a HACEMAL) (personalidad ?pers) (accion ?accion) (num-veces 0) (num-veces-max ?max))
 	=>
 	(printout t "El niño " ?pers " puede realizar: " ?accion crlf))
 
@@ -25,7 +25,7 @@
 	=>
 	(modify-instance ?jugador1 (posicion (+ ?v ?pos1)) (turno no))
 	(modify-instance ?jugador2 (turno si))
-	(printout t "Turno del: " ?nombre1 ", estaba en la casilla " ?pos1 " y avanza hasta la casilla " (+ ?v ?pos1)   crlf))
+	(printout t "Turno del " ?nombre1 ", estaba en la casilla " ?pos1 " y se mueve hasta la casilla " (+ ?v ?pos1)   crlf))
 
 ;para facilitar el juego se ha hecho que salgan numeros aleatorios
 ; al principio habiamos hecho dos reglas pero al no avanzar de 1 en 1 no tenia sentido hacer dos reglas, asiq lo hacemos en una 
@@ -70,7 +70,9 @@
 ;asi se puede poner las rondas que se quiera jugar a la rayuela
 
 (defrule seAcabaElJuegoLimiteHaceMal
-	(object (is-a HACEMAL)(personalidad ?pers) (accion ?accion) (num-veces ?num) (num-veces-max ?num))
+	(declare (salience 20))
+	(object (is-a HACEMAL)(personalidad ?pers) (accion ?accion) (num-veces ?num) (num-veces-max ?max))
+	(test (eq ?num ?max))
 	=>
 	(printout t "Vamos a acabar la partida esta vez, ¡ya jugaremos otra vez!"   crlf)
 	(halt))

@@ -1,0 +1,42 @@
+TRUE
+CLIPS> (dribble-on salida-prueba-3.txt)
+El juego elegido para la sesión es: oca
+El niño se caracteriza por ser: nervioso
+¡Vamos a jugar!
+El niño nervioso puede realizar:  quiere que se acabe ya la partida
+El niño nervioso puede realizar:  se enfada porque le ha tocado un número de dado que no quería
+Turno del niño, estaba en la casilla 0 y se mueve hasta la casilla 1
+Turno del robot, estaba en la casilla 0 y se mueve hasta la casilla 2
+Turno del niño, estaba en la casilla 1 y se mueve hasta la casilla 3
+Turno del robot, estaba en la casilla 2 y se mueve hasta la casilla 5
+Turno del niño, estaba en la casilla 3 y se mueve hasta la casilla 9
+Turno del robot, estaba en la casilla 5 y se mueve hasta la casilla 10
+Turno del niño, estaba en la casilla 9 y se mueve hasta la casilla 10
+Turno del robot, estaba en la casilla 10 y se mueve hasta la casilla 14
+El niño realiza:  quiere que se acabe ya la partida
+El robot le corrige diciendo:  Ya queda menos para acabar la partida, ¡ánimo que puedes ganar! 
+Turno del robot, estaba en la casilla 14 y se mueve hasta la casilla 18
+Turno del niño, estaba en la casilla 10 y se mueve hasta la casilla 16
+Turno del robot, estaba en la casilla 18 y se mueve hasta la casilla 23
+El niño realiza:  se enfada porque le ha tocado un número de dado que no quería
+El robot le corrige diciendo:  Tranquilo, la próxima te tocará un número mejor seguro
+Turno del robot, estaba en la casilla 23 y se mueve hasta la casilla 29
+Turno del niño, estaba en la casilla 16 y se mueve hasta la casilla 17
+Turno del robot, estaba en la casilla 29 y se mueve hasta la casilla 34
+Turno del niño, estaba en la casilla 17 y se mueve hasta la casilla 20
+Turno del robot, estaba en la casilla 34 y se mueve hasta la casilla 40
+Turno del niño, estaba en la casilla 20 y se mueve hasta la casilla 25
+Turno del robot, estaba en la casilla 40 y se mueve hasta la casilla 44
+Turno del niño, estaba en la casilla 25 y se mueve hasta la casilla 30
+Turno del robot, estaba en la casilla 44 y se mueve hasta la casilla 47
+Turno del niño, estaba en la casilla 30 y se mueve hasta la casilla 31
+Turno del robot, estaba en la casilla 47 y se mueve hasta la casilla 52
+Turno del niño, estaba en la casilla 31 y se mueve hasta la casilla 32
+Turno del robot, estaba en la casilla 52 y se mueve hasta la casilla 56
+Turno del niño, estaba en la casilla 32 y se mueve hasta la casilla 37
+Turno del robot, estaba en la casilla 56 y se mueve hasta la casilla 62
+Turno del niño, estaba en la casilla 37 y se mueve hasta la casilla 42
+Turno del robot, estaba en la casilla 62 y se mueve hasta la casilla 65
+FIN DEL JUEGO
+El ganador es el robot ¡enhorabuena!
+CLIPS> (run)

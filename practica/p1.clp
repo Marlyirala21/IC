@@ -95,6 +95,7 @@
 	(printout t "El " ?nombre1 " ha completado una vuelta, le quedan " (- ?mr (+ ?cnt1 1)) " para ganar la partida"  crlf)
 	(modify-instance ?jugador1 (turno no) (contador (+ ?cnt1 1)))
 	(modify-instance ?jugador2 (turno si)))
+
 	
 (defrule moverCasillaEspecial
 	?jugador1 <- (object (is-a JUGADOR)(nombre ?nombre1) (personalidad ?pers1) (posicion ?pos1) (turno si) (contador ?cnt1))
@@ -107,6 +108,7 @@
 	(printout t "¡El " ?nombre1 " ha caido en una casilla de tipo " ?t "!"  crlf)
 	(printout t "Turno del " ?nombre1 ", estaba en la casilla " ?pos1 " y avanza hasta la casilla " ?fin crlf))
 	
+; el niño pierde su turno
 (defrule elNiñoHaceAlgoMal 
 	?jugador1 <- (object (is-a JUGADOR)(nombre ?nombre1) (personalidad ?pers1) (posicion ?pos1) (turno si)(contador ?cnt1))
 	?jugador2 <- (object (is-a JUGADOR)(nombre ?nombre2) (personalidad ?pers2) (posicion ?pos2) (turno no)(contador ?cnt2))
@@ -117,7 +119,7 @@
 	(modify-instance ?jugador1 (turno no))
 	(modify-instance ?jugador2 (turno si))
 	(modify-instance ?a (num-veces (+ ?num 1)))
-	(printout t "El " ?nombre1 " realiza: " ?accion  crlf)
+	(printout t "El " ?nombre1 " realiza: " ?accion " y pierde el turno" crlf)
 	(printout t "El robot le corrige diciendo: " ?respuesta  crlf))
 
 ;asi se puede poner las rondas que se quiera jugar a la rayuela
