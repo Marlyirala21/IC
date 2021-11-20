@@ -1,112 +1,118 @@
 (defrule bienvenida
 	(declare (salience 20))
-	(object (is-a JUGADOR) (nombre niño) (personalidad ?pers) (posicion 0)(turno ?turno) (contador 0))
+	(not (inicio))
+	(object (is-a JUGADOR) (nombre niño) (personalidad ?pers) (posicion 0)(turno ?turno) (num-rondas 0)(num-haceMal 0)(num-haceMal-max ?max))
 	(object (is-a JUEGO) (tipo ?tipo) (elemento ?elem) (max-casillas ?mc) (max-rondas ?mr))
-	(test ( neq ?pers robot))
 	=>
 	(printout t "El juego elegido para la sesión es: " ?tipo crlf)
 	(printout t "El niño se caracteriza por ser: " ?pers crlf)
-	(printout t "¡Vamos a jugar!" crlf))
+	(assert (inicio)))
+
+(defrule características
+	(declare (salience 15))
+	(object (is-a HACEMAL) (personalidad ?pers) (accion ?accion))
+	=>
+	(printout t "El niño " ?pers " puede: " ?accion crlf))
 	
 ;si solo hace falta que el niño haga una cosa mal en cada prueba se puede meter esto en la regla de bienvenida
 	
-(defrule características
-	(declare (salience 15))
-	(object (is-a HACEMAL) (personalidad ?pers) (accion ?accion) (num-veces 0) (num-veces-max ?max))
+(defrule tirarElemento 
+	(not (tirado ?valor))
+	(object (is-a ELEMENTO)(valor ?valor))
 	=>
-	(printout t "El niño " ?pers " puede realizar: " ?accion crlf))
+	(assert (tirado ?valor))
+)
  
 (defrule moverOca
-	(tirado ?v)
-	?jugador1 <- (object (is-a JUGADOR)(nombre ?nombre1) (personalidad ?pers1) (posicion ?pos1) (turno si) (contador ?cnt1))
-	?jugador2 <- (object (is-a JUGADOR)(nombre ?nombre2) (personalidad ?pers2) (posicion ?pos2) (turno no) (contador ?cnt2))
-	(object (is-a JUEGO)(tipo oca) (elemento dado) (max-casillas ?max)(max-rondas ?mr))
+	?t <- (tirado ?valor)
+	?jugador1 <- (object (is-a JUGADOR)(nombre ?nombre1) (personalidad ?pers1) (posicion ?pos1) (turno si) (num-rondas ?rondas1)(num-haceMal ?num1)(num-haceMal-max ?max1))
+	?jugador2 <- (object (is-a JUGADOR)(nombre ?nombre2) (personalidad ?pers2) (posicion ?pos2) (turno no) (num-rondas ?rondas2)(num-haceMal ?num2)(num-haceMal-max ?max2))
+	(object (is-a JUEGO)(tipo oca)(elemento dado)(max-casillas ?max)(max-rondas ?mr))
 	(test (<= ?pos1 ?max))
 	=>
-	(printout t "Ha caido el número " ?v crlf)
-	(modify-instance ?jugador1 (posicion (+ ?v ?pos1)) (turno no))
+	(modify-instance ?jugador1 (posicion (+ ?valor ?pos1)) (turno no))
 	(modify-instance ?jugador2 (turno si))
-	(retract (tirado ?v))
-	(printout t "Turno del " ?nombre1 ", estaba en la casilla " ?pos1 " y se mueve hasta la casilla " (+ ?v ?pos1)   crlf))
-	
-	
-(defrule tirarElemento 
-	(not tirado ?v)
-	(object (is-a ELEMENTO)(valor ?v))
-	=>
-	(assert (tirado ?v))
-)
-	
+	(retract ?t)
+	(printout t crlf "«Es turno del "?nombre1 "»" crlf)
+	(printout t "El dado ha caido en la casilla: "?valor crlf)
+	(printout t "Estaba en la casilla " ?pos1 " y se mueve hasta la casilla " (+ ?valor ?pos1)   crlf))
+		
 
 ;para facilitar el juego se ha hecho que salgan numeros aleatorios
 ; al principio habiamos hecho dos reglas pero al no avanzar de 1 en 1 no tenia sentido hacer dos reglas, asiq lo hacemos en una 
-(defrule moverRayuela   												
+(defrule moverRayuela  
+	?t <- (tirado ?valor)
 	(object (is-a JUEGO) (tipo rayuela) (elemento piedra) (max-casillas ?mc)(max-rondas ?mr))
-	?jugador1 <- (object (is-a JUGADOR)(nombre ?nombre1) (personalidad ?per1) (posicion 0) (turno si) (contador ?cnt1))
-	?jugador2 <- (object (is-a JUGADOR)(nombre ?nombre2) (personalidad ?per2) (posicion ?pos2) (turno no)(contador ?cnt2))
-	(tirado ?v)
+	?jugador1 <- (object (is-a JUGADOR)(nombre ?nombre1) (personalidad ?per1) (posicion 0) (turno si) (num-rondas ?rondas1) (num-haceMal ?num1)(num-haceMal-max ?max1))
+	?jugador2 <- (object (is-a JUGADOR)(nombre ?nombre2) (personalidad ?per2) (posicion ?pos2) (turno no)(num-rondas ?rondas2)(num-haceMal ?num2)(num-haceMal-max ?max2))
 	=>
-	(printout t "Es turno del: "?nombre1 crlf)
-	(printout t "La piedra ha caido en la casilla: "?v crlf)
-	(printout t "El " ?nombre1 " avanza hasta la posicion " (- ?v 1) ", salta la piedra que esta en la posicion " ?v " y sigue hasta la casilla " ?mc crlf)
-	(printout t "El " ?nombre1 " vuelve desde la casilla " ?mc ", se para en la casilla " ?v " para coger la piedra y vuelve hasta la posición inicial"  crlf)
-	(printout t "El " ?nombre1 " ha completado una vuelta, le quedan " (- ?mr (+ ?cnt1 1)) " para ganar la partida"  crlf)
-	(modify-instance ?jugador1 (turno no) (contador (+ ?cnt1 1)))
+	(printout t crlf "«Es turno del "?nombre1 "»" crlf)
+	(printout t "La piedra ha caido en la casilla: "?valor crlf)
+	(printout t "El " ?nombre1 " avanza hasta la posicion " (- ?valor 1) ", salta la piedra que esta en la posicion " ?valor " y sigue hasta la casilla " ?mc crlf)
+	(printout t "El " ?nombre1 " vuelve desde la casilla " ?mc ", se para en la casilla " ?valor " para coger la piedra y vuelve hasta la posición inicial"  crlf)
+	(printout t "El " ?nombre1 " ha completado una vuelta, le queda " (- ?mr (+ ?rondas1 1)) " para ganar la partida"  crlf)
+	(modify-instance ?jugador1 (turno no) (num-rondas (+ ?rondas1 1)))
 	(modify-instance ?jugador2 (turno si))
-	(retract (tirado ?v)))
+	(retract ?t))
 	
 (defrule moverCasillaEspecial
-	?jugador1 <- (object (is-a JUGADOR)(nombre ?nombre1) (personalidad ?pers1) (posicion ?pos1) (turno si) (contador ?cnt1))
-	?jugador2 <- (object (is-a JUGADOR)(nombre ?nombre2) (personalidad ?pers2) (posicion ?pos2) (turno no) (contador ?cnt2))
-	(object (is-a JUEGO)(tipo ?tipo) (elemento ?elem) (max-casillas ?max) (valor-elemento ?valor)(max-rondas ?mr))
-	(object (is-a CASILLA)(tipo ?t ) (inicio ?pos1) (fin ?fin))
+	?t <- (tirado ?valor)
+	?jugador1 <- (object (is-a JUGADOR)(nombre ?nombre1) (personalidad ?pers1) (posicion ?pos1) (turno si) (num-rondas ?rondas1)(num-haceMal ?num1)(num-haceMal-max ?max1))
+	?jugador2 <- (object (is-a JUGADOR)(nombre ?nombre2) (personalidad ?pers2) (posicion ?pos2) (turno no) (num-rondas ?rondas2)(num-haceMal ?num2)(num-haceMal-max ?max2))
+	(object (is-a JUEGO)(tipo ?tipo) (elemento ?elem) (max-casillas ?max)(max-rondas ?mr))
+	(object (is-a CASILLA)(tipo ?tipo ) (inicio ?inicio) (fin ?fin))
+	(test (eq (+ ?pos1 ?valor) ?inicio))
 	=>
 	(modify-instance ?jugador1 (posicion ?fin) (turno no))
 	(modify-instance ?jugador2 (turno si))
-	(printout t "¡El " ?nombre1 " ha caido en una casilla de tipo " ?t "!"  crlf)
-	(printout t "Turno del " ?nombre1 ", estaba en la casilla " ?pos1 " y avanza hasta la casilla " ?fin crlf))
+	(printout t crlf "«Es turno del "?nombre1 "»" crlf "La piedra ha caido en la casilla: "?valor crlf)
+	(printout t "¡Ha caido en una casilla de tipo " ?tipo "!"  crlf)
+	(printout t "Avanza hasta la casilla " ( + ?pos1 ?valor) " y se mueve hasta la casilla " ?fin crlf))
 	
 (defrule elNiñoHaceAlgoMal 
-	(tirado ?v)
-	?jugador1 <- (object (is-a JUGADOR)(nombre ?nombre1) (personalidad ?pers1) (posicion ?pos1) (turno si)(contador ?cnt1))
-	?jugador2 <- (object (is-a JUGADOR)(nombre ?nombre2) (personalidad ?pers2) (posicion ?pos2) (turno no)(contador ?cnt2))
-	?a <- (object (is-a HACEMAL)(personalidad ?pers1) (accion ?accion) (num-veces ?num) (num-veces-max ?max))
+	?t <- (tirado ?valor)
+	(object (is-a JUEGO) (tipo ?tipo) (elemento ?elem) (max-casillas ?mc)(max-rondas ?mr))
+	?jugador1 <- (object (is-a JUGADOR)(nombre ?nombre1) (personalidad ?pers1) (posicion ?pos1) (turno si)(num-rondas ?rondas1)(num-haceMal ?num1)(num-haceMal-max ?max1))
+	?jugador2 <- (object (is-a JUGADOR)(nombre ?nombre2) (personalidad ?pers2) (posicion ?pos2) (turno no)(num-rondas ?rondas2)(num-haceMal ?num2)(num-haceMal-max ?max2))
+	?a <- (object (is-a HACEMAL)(personalidad ?pers1) (accion ?accion))
 	(object (is-a CORRIGE) (jugador ?nombre1) (accion ?accion) (respuesta ?respuesta))
-	(test ( < ?num ?max))
+	(test ( < ?num1 ?max1))
 	=>
 	(modify-instance ?jugador1 (turno no))
 	(modify-instance ?jugador2 (turno si))
-	(modify-instance ?a (num-veces (+ ?num 1)))
-	(printout t "El " ?nombre1 " realiza: " ?accion  crlf)
-	(printout t "El robot le corrige diciendo: " ?respuesta  crlf))
+	(modify-instance ?jugador1 (num-haceMal (+ ?num1 1)))
+	(printout t crlf "«Es turno del "?nombre1 "»" crlf)
+	(printout t "El elemento " ?elem " ha caido en la casilla: "?valor crlf)
+	(printout t "El " ?nombre1 " realiza:" ?accion  crlf)
+	(printout t "El robot le corrige diciendo: " ?respuesta  crlf)
+	(retract ?t))
 
-;asi se puede poner las rondas que se quiera jugar a la rayuela
 
 (defrule seAcabaElJuegoLimiteHaceMal
 	(declare (salience 20))
-	(object (is-a HACEMAL)(personalidad ?pers) (accion ?accion) (num-veces ?num) (num-veces-max ?max))
-	(test (eq ?num ?max))
+	?jugador <- (object (is-a JUGADOR)(nombre ?nombre) (personalidad ?pers) (posicion ?pos) (turno ?turno)(num-rondas ?rondas)(num-haceMal ?max)(num-haceMal-max ?max))
 	=>
-	(printout t "Vamos a acabar la partida esta vez, ¡ya jugaremos otra vez!"   crlf)
+	(printout t crlf "FIN DEL JUEGO"  crlf)
+	(printout t crlf "El robot dice: Vamos a acabar la partida esta vez, ¡ya jugaremos otra vez!"   crlf)
 	(halt))
 
 (defrule seAcabaElJuego 
 	(declare (salience 20))
-	(object (is-a JUEGO)(tipo ?tipo) (elemento ?elem) (max-casillas ?max) (valor-elemento ?valor)(max-rondas ?mr))
-	(object (is-a JUGADOR)(nombre ?nombre) (personalidad ?pers) (posicion ?pos) (turno ?turno)(contador ?cnt))
-	(test (eq ?mr ?cnt))
+	(object (is-a JUEGO)(tipo ?tipo) (elemento ?elem) (max-casillas ?max)(max-rondas ?mr))
+	(object (is-a JUGADOR)(nombre ?nombre) (personalidad ?pers) (posicion ?pos) (turno ?turno)(num-rondas ?mr) (num-haceMal ?num)(num-haceMal-max ?maxHaceMal))
 	=>
-	(printout t "FIN DEL JUEGO"  crlf)
-	(printout t "El ganador es el " ?nombre " ¡enhorabuena!" crlf)
+	(printout t crlf "FIN DEL JUEGO"  crlf)
+	(printout t "El ganador es el " ?nombre " ¡enhorabuena! 🎉" crlf)
 	(halt))
 	
 
 (defrule acabarOca
-	?jugador <- (object (is-a JUGADOR)(nombre ?nombre) (personalidad ?pers) (posicion ?pos) (turno ?turno)(contador ?cont))
+	?jugador <- (object (is-a JUGADOR)(nombre ?nombre) (personalidad ?pers) (posicion ?pos) (turno ?turno)(num-rondas ?rondas)(num-haceMal ?num)(num-haceMal-max ?max))
 	(object (is-a JUEGO) (tipo ?tipo) (elemento ?elem) (max-casillas ?mc) (max-rondas ?mr))
 	(test (>= ?pos ?mc))
 	=>
-	(modify-instance ?jugador (contador (+ ?cont 1))))
+	(printout t crlf "El " ?nombre " ha llegado hasta la casilla final." crlf)
+	(modify-instance ?jugador (num-rondas (+ ?rondas 1))))
 
 
 

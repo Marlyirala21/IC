@@ -2,13 +2,52 @@ TRUE
 CLIPS> (dribble-on salida-prueba-1.txt)
 El juego elegido para la sesión es: oca
 El niño se caracteriza por ser: tramposo
-¡Vamos a jugar!
-El niño tramposo puede realizar:  moverse una casilla de más
-El niño tramposo puede realizar:  tirar dos veces el dado
-El niño realiza:  tirar dos veces el dado
+El niño tramposo puede:  moverse una casilla de más
+El niño tramposo puede:  tirar dos veces el dado
+
+«Es turno del niño»
+El elemento dado ha caido en la casilla: 3
+El niño realiza: tirar dos veces el dado
 El robot le corrige diciendo: Oyee, el dado se tiene que tirar una sola vez, la próxima te tocará un número mejor ¡ya verás!
-El juego elegido para la sesión es: oca
-El niño se caracteriza por ser: tramposo
-¡Vamos a jugar!
-<== Focus MAIN
+
+«Es turno del robot»
+La piedra ha caido en la casilla: 5
+¡Ha caido en una casilla de tipo oca!
+Avanza hasta la casilla 5 y se mueve hasta la casilla 14
+
+«Es turno del niño»
+El elemento dado ha caido en la casilla: 5
+El niño realiza: moverse una casilla de más
+El robot le corrige diciendo: Uy que te he pillado, vuelve a tu casilla y no hagas trampas 👀
+
+«Es turno del robot»
+El dado ha caido en la casilla: 2
+Estaba en la casilla 14 y se mueve hasta la casilla 16
+
+«Es turno del niño»
+El elemento dado ha caido en la casilla: 1
+El niño realiza: moverse una casilla de más
+El robot le corrige diciendo: Uy que te he pillado, vuelve a tu casilla y no hagas trampas 👀
+
+«Es turno del robot»
+El dado ha caido en la casilla: 3
+Estaba en la casilla 16 y se mueve hasta la casilla 19
+
+«Es turno del niño»
+El elemento dado ha caido en la casilla: 1
+El niño realiza: tirar dos veces el dado
+El robot le corrige diciendo: Oyee, el dado se tiene que tirar una sola vez, la próxima te tocará un número mejor ¡ya verás!
+
+«Es turno del robot»
+El dado ha caido en la casilla: 2
+Estaba en la casilla 19 y se mueve hasta la casilla 21
+
+«Es turno del niño»
+El elemento dado ha caido en la casilla: 2
+El niño realiza: moverse una casilla de más
+El robot le corrige diciendo: Uy que te he pillado, vuelve a tu casilla y no hagas trampas 👀
+
+FIN DEL JUEGO
+
+El robot dice: Vamos a acabar la partida esta vez, ¡ya jugaremos otra vez!
 CLIPS> (run)

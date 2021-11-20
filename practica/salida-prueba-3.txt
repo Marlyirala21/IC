@@ -2,26 +2,25 @@ TRUE
 CLIPS> (dribble-on salida-prueba-3.txt)
 El juego elegido para la sesión es: oca
 El niño se caracteriza por ser: nervioso
-¡Vamos a jugar!
-El niño nervioso puede realizar:  quiere que se acabe ya la partida
-El niño nervioso puede realizar:  se enfada porque le ha tocado un número de dado que no quería.
-Ha caido el número 1
-Turno del niño, estaba en la casilla 0 y se mueve hasta la casilla 1
-Ha caido el número 2
-Turno del robot, estaba en la casilla 0 y se mueve hasta la casilla 2
-Ha caido el número 2
-Turno del niño, estaba en la casilla 1 y se mueve hasta la casilla 3
-Ha caido el número 3
-Turno del robot, estaba en la casilla 2 y se mueve hasta la casilla 5
-Ha caido el número 6
-Turno del niño, estaba en la casilla 3 y se mueve hasta la casilla 9
-Ha caido el número 5
-Turno del robot, estaba en la casilla 5 y se mueve hasta la casilla 10
-Ha caido el número 1
-Turno del niño, estaba en la casilla 9 y se mueve hasta la casilla 10
-Ha caido el número 4
-Turno del robot, estaba en la casilla 10 y se mueve hasta la casilla 14
-El niño realiza:  quiere que se acabe ya la partida
+El niño nervioso puede:  quiere que se acabe ya la partida
+El niño nervioso puede:  se enfada porque le ha tocado un número de dado que no quería.
+
+«Es turno del niño»
+El elemento dado ha caido en la casilla: 3
+El niño realiza: se enfada porque le ha tocado un número de dado que no quería.
+El robot le corrige diciendo:  Tranquilo, la próxima te tocará un número mejor seguro.
+
+«Es turno del robot»
+La piedra ha caido en la casilla: 5
+¡Ha caido en una casilla de tipo oca!
+Avanza hasta la casilla 5 y se mueve hasta la casilla 14
+
+«Es turno del niño»
+El elemento dado ha caido en la casilla: 5
+El niño realiza: quiere que se acabe ya la partida
 El robot le corrige diciendo:  Ya queda menos para acabar la partida, ¡ánimo que puedes ganar! 
-Vamos a acabar la partida esta vez, ¡ya jugaremos otra vez!
+
+FIN DEL JUEGO
+
+El robot dice: Vamos a acabar la partida esta vez, ¡ya jugaremos otra vez!
 CLIPS> (run)
