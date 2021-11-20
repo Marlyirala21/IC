@@ -1,4 +1,14 @@
 TRUE
 CLIPS> (dribble-on salida-prueba-1.txt)
-Vamos a acabar la partida esta vez, ¡ya jugaremos otra vez!
+El juego elegido para la sesión es: oca
+El niño se caracteriza por ser: tramposo
+¡Vamos a jugar!
+El niño tramposo puede realizar:  moverse una casilla de más
+El niño tramposo puede realizar:  tirar dos veces el dado
+El niño realiza:  tirar dos veces el dado
+El robot le corrige diciendo: Oyee, el dado se tiene que tirar una sola vez, la próxima te tocará un número mejor ¡ya verás!
+El juego elegido para la sesión es: oca
+El niño se caracteriza por ser: tramposo
+¡Vamos a jugar!
+<== Focus MAIN
 CLIPS> (run)

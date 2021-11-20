@@ -5,33 +5,10 @@ El niño se caracteriza por ser: torpe
 ¡Vamos a jugar!
 El niño torpe puede realizar:  pisar la raya
 El niño torpe puede realizar:  caerse al suelo al saltar
-Es turno del: niño
-La piedra ha caido en la casilla: 1
-El niño avanza hasta la posicion 0, salta la piedra que esta en la posicion 1 y sigue hasta la casilla 10
-El niño vuelve desde la casilla 10, se para en la casilla 1 para coger la piedra y vuelve hasta la posición inicial
-El niño ha completado una vuelta, le quedan 2 para ganar la partida
-Es turno del: robot
-La piedra ha caido en la casilla: 6
-El robot avanza hasta la posicion 5, salta la piedra que esta en la posicion 6 y sigue hasta la casilla 10
-El robot vuelve desde la casilla 10, se para en la casilla 6 para coger la piedra y vuelve hasta la posición inicial
-El robot ha completado una vuelta, le quedan 2 para ganar la partida
-Es turno del: niño
-La piedra ha caido en la casilla: 3
-El niño avanza hasta la posicion 2, salta la piedra que esta en la posicion 3 y sigue hasta la casilla 10
-El niño vuelve desde la casilla 10, se para en la casilla 3 para coger la piedra y vuelve hasta la posición inicial
-El niño ha completado una vuelta, le quedan 1 para ganar la partida
-Es turno del: robot
-La piedra ha caido en la casilla: 8
-El robot avanza hasta la posicion 7, salta la piedra que esta en la posicion 8 y sigue hasta la casilla 10
-El robot vuelve desde la casilla 10, se para en la casilla 8 para coger la piedra y vuelve hasta la posición inicial
-El robot ha completado una vuelta, le quedan 1 para ganar la partida
 El niño realiza:  pisar la raya
 El robot le corrige diciendo:  ¡No pasa nada!, la próxima lo harás mejor 🦾
-Es turno del: robot
-La piedra ha caido en la casilla: 1
-El robot avanza hasta la posicion 0, salta la piedra que esta en la posicion 1 y sigue hasta la casilla 10
-El robot vuelve desde la casilla 10, se para en la casilla 1 para coger la piedra y vuelve hasta la posición inicial
-El robot ha completado una vuelta, le quedan 0 para ganar la partida
-FIN DEL JUEGO
-El ganador es el robot ¡enhorabuena!
+El juego elegido para la sesión es: rayuela
+El niño se caracteriza por ser: torpe
+¡Vamos a jugar!
+<== Focus MAIN
 CLIPS> (run)
