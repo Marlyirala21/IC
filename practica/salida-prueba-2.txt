@@ -27,7 +27,6 @@ El robot vuelve desde la casilla 10, se para en la casilla 8 para coger la piedr
 El robot ha completado una vuelta, le quedan 1 para ganar la partida
 El niño realiza:  pisar la raya
 El robot le corrige diciendo:  ¡No pasa nada!, la próxima lo harás mejor 🦾
-El niño torpe puede realizar:  pisar la raya
 Es turno del: robot
 La piedra ha caido en la casilla: 1
 El robot avanza hasta la posicion 0, salta la piedra que esta en la posicion 1 y sigue hasta la casilla 10
