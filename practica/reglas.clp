@@ -20,8 +20,7 @@
 	(not (tirado ?valor))
 	(object (is-a ELEMENTO)(valor ?valor))
 	=>
-	(assert (tirado ?valor))
-)
+	(assert (tirado ?valor)))
  
 (defrule moverOca
 	?t <- (tirado ?valor)
@@ -37,9 +36,7 @@
 	(printout t "El dado ha caido en la casilla: "?valor crlf)
 	(printout t "Estaba en la casilla " ?pos1 " y se mueve hasta la casilla " (+ ?valor ?pos1)   crlf))
 		
-
-;para facilitar el juego se ha hecho que salgan numeros aleatorios
-; al principio habiamos hecho dos reglas pero al no avanzar de 1 en 1 no tenia sentido hacer dos reglas, asiq lo hacemos en una 
+ 
 (defrule moverRayuela  
 	?t <- (tirado ?valor)
 	(object (is-a JUEGO) (tipo rayuela) (elemento piedra) (max-casillas ?mc)(max-rondas ?mr))

@@ -1,0 +1,43 @@
+TRUE
+CLIPS> (run)
+El juego elegido para la sesión es: rayuela
+El niño se caracteriza por ser: torpe
+El niño torpe puede:  caerse al suelo al saltar
+El niño torpe puede:  pisar la raya
+
+«Es turno del niño»
+El elemento piedra ha caido en la casilla: 4
+El niño realiza: caerse al suelo al saltar
+El robot le corrige diciendo:  ¿Estás bien? No te preocupes, levantate y seguimos jugando 😉
+
+«Es turno del robot»
+La piedra ha caido en la casilla: 4
+El robot avanza hasta la posicion 3, salta la piedra que esta en la posicion 4 y sigue hasta la casilla 10
+El robot vuelve desde la casilla 10, se para en la casilla 4 para coger la piedra y vuelve hasta la posición inicial
+El robot ha completado una vuelta, le queda 2 para ganar la partida
+
+«Es turno del niño»
+El elemento piedra ha caido en la casilla: 6
+El niño realiza: pisar la raya
+El robot le corrige diciendo:  ¡No pasa nada!, la próxima lo harás mejor 🦾
+
+«Es turno del robot»
+La piedra ha caido en la casilla: 6
+El robot avanza hasta la posicion 5, salta la piedra que esta en la posicion 6 y sigue hasta la casilla 10
+El robot vuelve desde la casilla 10, se para en la casilla 6 para coger la piedra y vuelve hasta la posición inicial
+El robot ha completado una vuelta, le queda 1 para ganar la partida
+
+«Es turno del niño»
+El elemento piedra ha caido en la casilla: 9
+El niño realiza: caerse al suelo al saltar
+El robot le corrige diciendo:  ¿Estás bien? No te preocupes, levantate y seguimos jugando 😉
+
+«Es turno del robot»
+La piedra ha caido en la casilla: 2
+El robot avanza hasta la posicion 1, salta la piedra que esta en la posicion 2 y sigue hasta la casilla 10
+El robot vuelve desde la casilla 10, se para en la casilla 2 para coger la piedra y vuelve hasta la posición inicial
+El robot ha completado una vuelta, le queda 0 para ganar la partida
+
+FIN DEL JUEGO
+El ganador es el robot ¡enhorabuena! 🎉
+CLIPS> (dribble-off)

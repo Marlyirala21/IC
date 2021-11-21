@@ -1,0 +1,50 @@
+TRUE
+CLIPS> (run)
+El juego elegido para la sesión es: rayuela
+El niño se caracteriza por ser: impaciente
+El niño impaciente puede:  pedir que se acabe el juego
+
+«Es turno del niño»
+La piedra ha caido en la casilla: 7
+El niño avanza hasta la posicion 6, salta la piedra que esta en la posicion 7 y sigue hasta la casilla 10
+El niño vuelve desde la casilla 10, se para en la casilla 7 para coger la piedra y vuelve hasta la posición inicial
+El niño ha completado una vuelta, le queda 4 para ganar la partida
+
+«Es turno del robot»
+La piedra ha caido en la casilla: 5
+El robot avanza hasta la posicion 4, salta la piedra que esta en la posicion 5 y sigue hasta la casilla 10
+El robot vuelve desde la casilla 10, se para en la casilla 5 para coger la piedra y vuelve hasta la posición inicial
+El robot ha completado una vuelta, le queda 4 para ganar la partida
+
+«Es turno del niño»
+La piedra ha caido en la casilla: 6
+El niño avanza hasta la posicion 5, salta la piedra que esta en la posicion 6 y sigue hasta la casilla 10
+El niño vuelve desde la casilla 10, se para en la casilla 6 para coger la piedra y vuelve hasta la posición inicial
+El niño ha completado una vuelta, le queda 3 para ganar la partida
+
+«Es turno del robot»
+La piedra ha caido en la casilla: 2
+El robot avanza hasta la posicion 1, salta la piedra que esta en la posicion 2 y sigue hasta la casilla 10
+El robot vuelve desde la casilla 10, se para en la casilla 2 para coger la piedra y vuelve hasta la posición inicial
+El robot ha completado una vuelta, le queda 3 para ganar la partida
+
+«Es turno del niño»
+El elemento piedra ha caido en la casilla: 10
+El niño realiza: pedir que se acabe el juego
+El robot le corrige diciendo:  Esta bien, en un ratito acabamos el la partida, ¡ánimo que puedes ganar!
+
+«Es turno del robot»
+La piedra ha caido en la casilla: 1
+El robot avanza hasta la posicion 0, salta la piedra que esta en la posicion 1 y sigue hasta la casilla 10
+El robot vuelve desde la casilla 10, se para en la casilla 1 para coger la piedra y vuelve hasta la posición inicial
+El robot ha completado una vuelta, le queda 2 para ganar la partida
+
+«Es turno del niño»
+El elemento piedra ha caido en la casilla: 3
+El niño realiza: pedir que se acabe el juego
+El robot le corrige diciendo:  Esta bien, en un ratito acabamos el la partida, ¡ánimo que puedes ganar!
+
+FIN DEL JUEGO
+
+El robot dice: Vamos a acabar la partida esta vez, ¡ya jugaremos otra vez!
+CLIPS> (dribble-off)

@@ -1,12 +1,12 @@
 TRUE
-CLIPS> (dribble-on salida-prueba-1.txt)
+CLIPS> (run)
 El juego elegido para la sesión es: oca
 El niño se caracteriza por ser: tramposo
-El niño tramposo puede:  moverse una casilla de más
 El niño tramposo puede:  tirar dos veces el dado
+El niño tramposo puede:  moverse una casilla de más
 
 «Es turno del niño»
-El elemento dado ha caido en la casilla: 3
+El elemento dado ha caido en la casilla: 1
 El niño realiza: tirar dos veces el dado
 El robot le corrige diciendo: Oyee, el dado se tiene que tirar una sola vez, la próxima te tocará un número mejor ¡ya verás!
 
@@ -21,8 +21,25 @@ El niño realiza: moverse una casilla de más
 El robot le corrige diciendo: Uy que te he pillado, vuelve a tu casilla y no hagas trampas 👀
 
 «Es turno del robot»
+El dado ha caido en la casilla: 6
+Estaba en la casilla 14 y se mueve hasta la casilla 20
+
+«Es turno del niño»
+El dado ha caido en la casilla: 3
+Estaba en la casilla 0 y se mueve hasta la casilla 3
+
+«Es turno del robot»
+El dado ha caido en la casilla: 4
+Estaba en la casilla 20 y se mueve hasta la casilla 24
+
+«Es turno del niño»
+El elemento dado ha caido en la casilla: 2
+El niño realiza: tirar dos veces el dado
+El robot le corrige diciendo: Oyee, el dado se tiene que tirar una sola vez, la próxima te tocará un número mejor ¡ya verás!
+
+«Es turno del robot»
 El dado ha caido en la casilla: 2
-Estaba en la casilla 14 y se mueve hasta la casilla 16
+Estaba en la casilla 24 y se mueve hasta la casilla 26
 
 «Es turno del niño»
 El elemento dado ha caido en la casilla: 1
@@ -31,23 +48,82 @@ El robot le corrige diciendo: Uy que te he pillado, vuelve a tu casilla y no hag
 
 «Es turno del robot»
 El dado ha caido en la casilla: 3
-Estaba en la casilla 16 y se mueve hasta la casilla 19
+Estaba en la casilla 26 y se mueve hasta la casilla 29
 
 «Es turno del niño»
-El elemento dado ha caido en la casilla: 1
+El dado ha caido en la casilla: 5
+Estaba en la casilla 3 y se mueve hasta la casilla 8
+
+«Es turno del robot»
+El dado ha caido en la casilla: 4
+Estaba en la casilla 29 y se mueve hasta la casilla 33
+
+«Es turno del niño»
+El elemento dado ha caido en la casilla: 4
+El niño realiza: moverse una casilla de más
+El robot le corrige diciendo: Uy que te he pillado, vuelve a tu casilla y no hagas trampas 👀
+
+«Es turno del robot»
+El dado ha caido en la casilla: 5
+Estaba en la casilla 33 y se mueve hasta la casilla 38
+
+«Es turno del niño»
+El elemento dado ha caido en la casilla: 2
 El niño realiza: tirar dos veces el dado
 El robot le corrige diciendo: Oyee, el dado se tiene que tirar una sola vez, la próxima te tocará un número mejor ¡ya verás!
 
 «Es turno del robot»
+El dado ha caido en la casilla: 4
+Estaba en la casilla 38 y se mueve hasta la casilla 42
+
+«Es turno del niño»
+El dado ha caido en la casilla: 1
+Estaba en la casilla 8 y se mueve hasta la casilla 9
+
+«Es turno del robot»
 El dado ha caido en la casilla: 2
-Estaba en la casilla 19 y se mueve hasta la casilla 21
+Estaba en la casilla 42 y se mueve hasta la casilla 44
 
 «Es turno del niño»
 El elemento dado ha caido en la casilla: 2
-El niño realiza: moverse una casilla de más
-El robot le corrige diciendo: Uy que te he pillado, vuelve a tu casilla y no hagas trampas 👀
+El niño realiza: tirar dos veces el dado
+El robot le corrige diciendo: Oyee, el dado se tiene que tirar una sola vez, la próxima te tocará un número mejor ¡ya verás!
+
+«Es turno del robot»
+El dado ha caido en la casilla: 6
+Estaba en la casilla 44 y se mueve hasta la casilla 50
+
+«Es turno del niño»
+El dado ha caido en la casilla: 1
+Estaba en la casilla 9 y se mueve hasta la casilla 10
+
+«Es turno del robot»
+El dado ha caido en la casilla: 6
+Estaba en la casilla 50 y se mueve hasta la casilla 56
+
+«Es turno del niño»
+El elemento dado ha caido en la casilla: 6
+El niño realiza: tirar dos veces el dado
+El robot le corrige diciendo: Oyee, el dado se tiene que tirar una sola vez, la próxima te tocará un número mejor ¡ya verás!
+
+«Es turno del robot»
+El dado ha caido en la casilla: 5
+Estaba en la casilla 56 y se mueve hasta la casilla 61
+
+«Es turno del niño»
+El dado ha caido en la casilla: 2
+Estaba en la casilla 10 y se mueve hasta la casilla 12
+
+«Es turno del robot»
+El dado ha caido en la casilla: 5
+Estaba en la casilla 61 y se mueve hasta la casilla 66
+
+«Es turno del niño»
+El dado ha caido en la casilla: 4
+Estaba en la casilla 12 y se mueve hasta la casilla 16
+
+El robot ha completado una vuelta.
 
 FIN DEL JUEGO
-
-El robot dice: Vamos a acabar la partida esta vez, ¡ya jugaremos otra vez!
-CLIPS> (run)
+El ganador es el robot ¡enhorabuena! 🎉
+CLIPS> (dribble-off)

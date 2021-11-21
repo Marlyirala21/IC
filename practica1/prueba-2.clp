@@ -1,5 +1,5 @@
 (definstances juego
-        (of JUEGO (tipo rayuela) (elemento piedra) (max-casillas 10) (max-rondas 15))
+        (of JUEGO (tipo rayuela) (elemento piedra) (max-casillas 10) (max-rondas 3))
 		(of JUGADOR (nombre niño) (personalidad torpe) (posicion 0) (turno si) (num-haceMal 0) (num-haceMal-max 15))
 		(of JUGADOR (nombre robot) (personalidad robot) (posicion 0) (num-haceMal 0) (num-haceMal-max 15))
 		(of HACEMAL (personalidad torpe) (accion " pisar la raya") )
