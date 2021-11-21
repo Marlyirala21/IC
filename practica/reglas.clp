@@ -8,7 +8,7 @@
 	(printout t "El niño se caracteriza por ser: " ?pers crlf)
 	(assert (inicio)))
 
-(defrule características
+(defrule acciones
 	(declare (salience 15))
 	(object (is-a HACEMAL) (personalidad ?pers) (accion ?accion))
 	=>
