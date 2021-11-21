@@ -32,10 +32,10 @@
 
 
 (definstances juego
-        (of JUEGO (tipo oca) (elemento dado) (max-casillas 62) (max-rondas 1))
+        (of JUEGO (tipo oca) (elemento dado) (max-casillas 62) (max-rondas 2))
         
-		(of JUGADOR (nombre niño) (personalidad tramposo) (posicion 0) (turno si) (num-haceMal 0)(num-haceMal-max 5))
-		(of JUGADOR (nombre robot) (personalidad robot) (posicion 0) (num-haceMal 0)(num-haceMal-max 5))
+		(of JUGADOR (nombre niño) (personalidad tramposo) (posicion 0) (turno si) (num-haceMal 0)(num-haceMal-max 20))
+		(of JUGADOR (nombre robot) (personalidad robot) (posicion 0) (num-haceMal 0)(num-haceMal-max 20))
 		
 		(of HACEMAL (personalidad tramposo) (accion " moverse una casilla de más"))
 		
@@ -169,14 +169,15 @@
 	(printout t "El ganador es el " ?nombre " ¡enhorabuena! 🎉" crlf)
 	(halt))
 	
-
 (defrule acabarOca
-	?jugador <- (object (is-a JUGADOR)(nombre ?nombre) (personalidad ?pers) (posicion ?pos) (turno ?turno)(num-rondas ?rondas)(num-haceMal ?num)(num-haceMal-max ?max))
+	?jugador1 <- (object (is-a JUGADOR)(nombre ?nombre1) (personalidad ?pers1) (posicion ?pos1) (turno ?turno1)(num-rondas ?rondas1)(num-haceMal ?num1)(num-haceMal-max ?max1))
+	?jugador2 <- (object (is-a JUGADOR)(nombre ?nombre2) (personalidad ?pers2) (posicion ?pos2) (turno ?turno2)(num-rondas ?rondas2)(num-haceMal ?num2)(num-haceMal-max ?max2))
 	(object (is-a JUEGO) (tipo ?tipo) (elemento ?elem) (max-casillas ?mc) (max-rondas ?mr))
-	(test (>= ?pos ?mc))
+	(test (>= ?pos1 ?mc))
 	=>
-	(printout t crlf "El " ?nombre " ha llegado hasta la casilla final." crlf)
-	(modify-instance ?jugador (num-rondas (+ ?rondas 1))))
+	(printout t crlf "El " ?nombre1 " ha completado una ronda." crlf)
+	(modify-instance ?jugador1 (num-rondas (+ ?rondas1 1)) (posicion 0))
+	(modify-instance ?jugador2 (posicion 0)))
 
 
 
